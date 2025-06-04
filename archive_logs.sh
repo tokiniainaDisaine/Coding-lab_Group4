@@ -5,4 +5,3 @@ read -p "Select log to archive:
 2) Temperature
 3) Water Usage
 Enter choice (1-3): " user_choice
-
