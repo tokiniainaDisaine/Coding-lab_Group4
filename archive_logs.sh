@@ -6,9 +6,9 @@ temp_log="hospital_data/active_logs/temperature.log"
 water_log="hospital_data/active_logs/water_usage.log"
 
 # Define archive directories
-heart_archive="hospital_data/heart_data_archive"
-temp_archive="hospital_data/temperature_data_archive"
-water_archive="hospital_data/water_data_archive"
+heart_archive="hospital_data/archived_logs/heart_data_archives"
+temp_archive="hospital_data/archived_logs/temperature_data_archives"
+water_archive="hospital_data/archived_logs/water_data_archives"
 
 # Prompt user
 echo "Select log to archive:"
@@ -59,4 +59,4 @@ fi
 
 touch "$log"
 echo "Successfully archived to $archived_file"
-
+esac
