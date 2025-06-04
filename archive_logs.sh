@@ -1,38 +1,62 @@
 #!/bin/bash
 
-# Archive directories
+# Define active log paths
+heart_log="hospital_data/active_logs/heart_rate.log"
+temp_log="hospital_data/active_logs/temperature.log"
+water_log="hospital_data/active_logs/water_usage.log"
 
-HEART_ARCHIVE="hospital_data/archived_logs/heart_data_archives"
-TEMP_ARCHIVE="hospital_data/archived_logs/temperature_data_archives"
-WATER_ARCHIVE="hospital_data/archived_logs/water_usage_data_archives"
+# Define archive directories
+heart_archive="hospital_data/archived_logs/heart_data_archives"
+temp_archive="hospital_data/archived_logs/temperature_data_archives"
+water_archive="hospital_data/archived_logs/water_data_archives"
 
-# Active logs
+# Prompt user
+echo "Select log to archive:"
+echo "1) Heart Rate"
+echo "2) Temperature"
+echo "3) Water Usage"
+read -p "Enter choice (1-3): " choice
 
-HEART_LOG="hospital_data/active_logs/heart_rate_log.log "
-TEMP_LOG="hospital_data/active_logs/temperature_log.log"
-WATER_LOG="hospital_data/active_logs/water_usage_log.log"
+# Determine selected log and archive folder
+case $choice in
+  1)
+    log=$heart_log
+    archive=$heart_archive
+    prefix="heart_rate"
+    ;;
+  2)
+    log=$temp_log
+    archive=$temp_archive
+    prefix="temperature"
+    ;;
+  3)
+    log=$water_log
+    archive=$water_archive
+    prefix="water_usage"
+    ;;
+  *)
+    echo "Invalid input. Please enter 1, 2, or 3."
+    exit 1
+    ;;
+esac
 
-# Timestamp format
-
-TIMESTAMP=$(date '+%Y-%m-%d_%H:%M:%S')
-
-read -p "Select log to archive:
-1) Heart Rate
-2) Temperature
-3) Water Usage
-Enter choice (1-3): " user_choice
-
-#check if the input is valid
-
-if [[ "user_choice" != "1" && "user_choice" != "2" && "user_choice" != "3" ]]; then
-	echo " Error: The input is wrong, please select 1, 2, and 3."
-	exit 1
+# Validate log file
+if [ ! -f "$log" ]; then
+  echo "[!] Log file not found: $log"
+  exit 1
 fi
 
-# proceed based on the choices
+# Create timestamp and archive filename
+timestamp=$(date +"%Y-%m-%d_%H:%M:%S")
+archived_file="$archive/${prefix}_$timestamp.log"
 
-case user_choice in
+# Archive the file
+mv "$log" "$archived_file"
+if [ $? -ne 0 ]; then
+  echo "[!] Failed to archive log."
+  exit 1
+fi
 
-	
-
+touch "$log"
+echo "Successfully archived to $archived_file"
 esac
