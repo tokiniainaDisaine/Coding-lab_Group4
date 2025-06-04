@@ -68,8 +68,12 @@ echo "Analyzing $LABEL log..."
 
 # Count occurrences per device
 DEVICE_COUNTS=$(awk '{print $2}' "$LOG_FILE" | sort | uniq -c)
-DEVICE_A_COUNT=&(grep "$DEVICE_A" $LOG_FILE | wc -l)
-DEVICE_B_COUNT=&(grep "$DEVICE_B" $LOG_FILE | wc -l)
+DEVICE_A_COUNT=$(grep "$DEVICE_A" $LOG_FILE | wc -l)
+DEVICE_B_COUNT=$(grep "$DEVICE_B" $LOG_FILE | wc -l)
+
+if [[ $choice = 3 ]]; then
+    DEVICE_B_COUNT="No device B for the Water Consumption Meter"
+fi
 
 # Get first and last timestamp
 FIRST_TIMESTAMP=$(head -n 1 "$LOG_FILE" | awk '{print $1, $2}')
@@ -82,9 +86,9 @@ LAST_TIMESTAMP=$(tail -n 1 "$LOG_FILE" | awk '{print $1, $2}')
     echo "--------------------------------------"
     echo "Device Counts:"
     # echo "$DEVICE_COUNTS"
-    echo "$DEVICE_A_COUNT"
-    echo "$DEVICE_B_COUNT"
-    echo
+    echo "Device A: $DEVICE_A_COUNT"
+    echo "Device B: $DEVICE_B_COUNT"
+    echo ""
     echo "First Entry: $FIRST_TIMESTAMP"
     echo "Last Entry : $LAST_TIMESTAMP"
     echo "======================================"
