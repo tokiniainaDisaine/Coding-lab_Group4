@@ -1,14 +1,5 @@
-device_A: 194 
-device_B: 194 
-log_head: 2025-05-31 09:51:43 
-log_tail: 2025-05-31 09:54:53
-
-device_A: 7 
-log_head: 2025-05-31 10:26:32 
-log_tail: 2025-05-31 10:26:38
-
 Analysis Report - Heart Rate Log
-Date: Wed 04 Jun 2025 06:42:26 AM PDT
+Date: Wed Jun  4 22:39:25 SAST 2025
 --------------------------------------
 Device Counts:
       2 09:51:43
@@ -199,20 +190,5 @@ Device Counts:
       2 09:54:53
 First Entry: 2025-05-31 09:51:43
 Last Entry : 2025-05-31 09:54:53
-======================================
-
-Analysis Report - Water Usage Log
-Date: Wed 04 Jun 2025 06:46:50 AM PDT
---------------------------------------
-Device Counts:
-      1 10:26:32
-      1 10:26:33
-      1 10:26:34
-      1 10:26:35
-      1 10:26:36
-      1 10:26:37
-      1 10:26:38
-First Entry: 2025-05-31 10:26:32
-Last Entry : 2025-05-31 10:26:38
 ======================================
 
