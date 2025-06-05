@@ -1,8 +1,9 @@
-Hospital Data Handling and Monitoring with Linux
-Introduction
+**Hospital Data Handling and Monitoring with Linux** 
+
+**Introduction**
 The project involves developing three shell scripts to manage heart rate data in a hospital. The scripts handle data recording, log archiving, and remote backups.
 
-1. Setup Instructions
+**1. Setup Instructions**
 Ensure you have the following installed on your Linux system:
 
 Bash shell
@@ -10,7 +11,7 @@ SSH access to the remote server
 Basic Linux command-line knowledge
 Clone the repository: git clone cd
 
-2. Running the Scripts
+**2. Running the Scripts**
 Run the heart rate monitoring script:
 
 ./heart_rate_monitor.sh
