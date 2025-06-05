@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Define active log paths
-heart_log="hospital_data/active_logs/heart_rate.log"
-temp_log="hospital_data/active_logs/temperature.log"
-water_log="hospital_data/active_logs/water_usage.log"
+heart_log="hospital_data/active_logs/heart_rate_log.log"
+temp_log="hospital_data/active_logs/temperature_log.log"
+water_log="hospital_data/active_logs/water_usage_log.log"
 
 # Define archive directories
 heart_archive="hospital_data/archived_logs/heart_data_archives"
 temp_archive="hospital_data/archived_logs/temperature_data_archives"
-water_archive="hospital_data/archived_logs/water_data_archives"
+water_archive="hospital_data/archived_logs/water_usage_data_archives"
 
 # Prompt user
 echo "Select log to archive:"
@@ -59,4 +59,3 @@ fi
 
 touch "$log"
 echo "Successfully archived to $archived_file"
-esac
