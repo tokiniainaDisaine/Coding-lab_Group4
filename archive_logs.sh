@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Define active log paths
-heart_log="hospital_data/active_logs/heart_rate_log.log"
-temp_log="hospital_data/active_logs/temperature_log.log"
-water_log="hospital_data/active_logs/water_usage_log.log"
+heart_log="hospital_data/active_logs/heart_rate.log"
+temp_log="hospital_data/active_logs/temperature.log"
+water_log="hospital_data/active_logs/water_usage.log"
 
 # Define archive directories
 heart_archive="hospital_data/archived_logs/heart_data_archives"

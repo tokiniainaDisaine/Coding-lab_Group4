@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Define log file paths
-HEART_LOG="hospital_data/active_logs/heart_rate_log.log"
-TEMP_LOG="hospital_data/active_logs/temperature_log.log"
-WATER_LOG="hospital_data/active_logs/water_usage_log.log"
+HEART_LOG="hospital_data/active_logs/heart_rate.log"
+TEMP_LOG="hospital_data/active_logs/temperature.log"
+WATER_LOG="hospital_data/active_logs/water_usage.log"
 
 # Define report file
 REPORT_FILE="hospital_data/reports/analysis_report.txt"
@@ -21,16 +21,16 @@ echo "3) Water Usage"
 read -p "Enter choice (1-3): " choice
 
 # Write to report
-# {
-#   echo "-----------------------------"
-#   echo "---- Analysis: $(date) ----"
-#   echo "Log Type: $log_name"
-#   echo "Device Entry Counts:"
-#   awk -F ':' '{print $1}' "$log" | sort | uniq -c
-#   echo "First Timestamp: $first"
-#   echo "Last Timestamp: $last"
-#   echo
-# } >> "$report_file"
+ {
+   echo "-----------------------------"
+   echo "---- Analysis: $(date) ----"
+   echo "Log Type: $log_name"
+   echo "Device Entry Counts:"
+   awk -F ':' '{print $1}' "$log" | sort | uniq -c
+   echo "First Timestamp: $first"
+   echo "Last Timestamp: $last"
+   echo
+ } >> "$report_file"
 
 # Determine selected log file and label
 case "$choice" in
