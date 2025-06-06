@@ -21,16 +21,16 @@ echo "3) Water Usage"
 read -p "Enter choice (1-3): " choice
 
 # Write to report
- {
-   echo "-----------------------------"
-   echo "---- Analysis: $(date) ----"
-   echo "Log Type: $log_name"
-   echo "Device Entry Counts:"
-   awk -F ':' '{print $1}' "$log" | sort | uniq -c
-   echo "First Timestamp: $first"
-   echo "Last Timestamp: $last"
-   echo
- } >> "$report_file"
+#  {
+#    echo "-----------------------------"
+#    echo "---- Analysis: $(date) ----"
+#    echo "Log Type: $log_name"
+#    echo "Device Entry Counts:"
+#    awk -F ':' '{print $1}' "$log" | sort | uniq -c
+#    echo "First Timestamp: $first"
+#    echo "Last Timestamp: $last"
+#    echo
+#  } >> "$report_file"
 
 # Determine selected log file and label
 case "$choice" in
